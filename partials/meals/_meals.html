@@ -1,0 +1,16 @@
+<select multiple chosen chosen-width="100%" data-placeholder="Search your invitees names" ng-model="search_invitees" ng-options="invitee for invitee in invitees()" ng-change="changeInvitees(search_invitees)"></select>
+<hr>
+<div class="panel panel-default" ng-repeat="meal in meals | filter:filterByInvitees | orderBy:'-date'">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-10 col-xs-10">
+        <a href="#/meal/{{ meal.$id() }}">Meal with {{ meal.invitees | toSentence }}</a>
+      </div>
+      <div class="col-md-2 col-xs-2 text-right">
+        <span class="label label-default">{{ meal.date | date:'yyyy-MM-dd' }}</span>
+      </div>
+    </div>
+    <hr>
+    <pre>{{ meal.description }}</pre>
+  </div>
+</div>

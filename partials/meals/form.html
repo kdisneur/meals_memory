@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><span class="glyphicon glyphicon-glass"></span>&nbsp; Meal</h1>
+      <hr>
+      <form name="form" role="form" novalidate>
+        <div class="form-group">
+          <label class="control-label" for="invitees">Invitees</label>
+          <tags-input ng-class="form-control" name="invitees" id="invitees" replace-spaces-with-dashes="false" ng-model="meal.invitees" maxLength="20" placeholder="Add your invitees names">
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.date.$invalid }">
+          <label class="control-label" for="date">Date <small ng-show="form.date.$invalid">is required</small></label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="date" id="date" datepicker-popup="yyyy-MM-dd" show-weeks="false" ng-model="meal.date" is-open="dateSelectorOpened" required>
+            <span class="input-group-btn">
+              <button class="btn btn-default" ng-click="openDateSelector()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.meal.$invalid }">
+          <label class="control-label" for="description">Description <small ng-show="form.description.$invalid">is required</small></label>
+          <textarea id="description" name="description" class="form-control" rows="5" ng-model="meal.description" required></textarea>
+        </div>
+        <div class="form-group">
+          <a class="btn btn-danger" ng-show="meal.$id()" ng-click="remove()" href="">Remove</a>
+          <button type="submit" class="btn btn-primary pull-right" ng-disabled="form.$invalid" ng-click="save()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meals_memory">
+  <head>
+    <title>Meals Memory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/chosen.min.css">
+    <link rel="stylesheet" href="stylesheets/ng-tags-input.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="MenuController">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Meals Memory</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/meals">Meals</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li ng-class="activeClass('/meals')"><a href="#/meals">Meals</a></li>
+          <li ng-class="activeClass('/meal/new')"><a href="#/meal/new">Add a meal</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div ng-view></div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <hr>
+          <div class="col-md-6 col-xs-6"><a href="https://github.com/kdisneur">Kevin Disneur</a> 2013</div>
+          <div class="col-md-6 col-xs-6 text-right">Made with <span class="glyphicon glyphicon-heart" title="love"></span> in France</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="javascripts/chosen.jquery.min.js"></script>
+
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="javascripts/angularui.min.js"></script>
+    <script src="javascripts/angularui-templates.min.js"></script>
+    <script src="javascripts/ng-tags-input.js"></script>
+    <script src="javascripts/mongolabResourceHttp.js"></script>
+
+    <script src="javascripts/settings.js"></script>
+    <script src="javascripts/meals_memory.js"></script>
+  </body>
+</html>
